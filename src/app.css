@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: theme('colors.background');
+  color: theme('colors.on-background');
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Clinical-Industrial grid background, used on the home hero */
+.grid-bg {
+  background-image: linear-gradient(to right, theme('colors.surface-variant') 1px, transparent 1px),
+    linear-gradient(to bottom, theme('colors.surface-variant') 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center top;
+}
+
+/* Custom scrollbar, industrial look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.surface-container-lowest');
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.outline');
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.primary');
+}
+
+/* Glass / scanner effect used on fixed nav and overlays */
+.glass-panel,
+.scanner-glass {
+  background: rgba(11, 19, 38, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.industrial-border {
+  border: 1px solid theme('colors.outline-variant');
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
