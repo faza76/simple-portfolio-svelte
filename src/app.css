@@ -84,3 +84,179 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ----------------------------------------------------------------
+   Markdown article content (rendered by {@html marked.parse(...)})
+   Styled to match the clinical-industrial dark design system.
+   ---------------------------------------------------------------- */
+.md-content {
+  color: theme('colors.on-surface-variant');
+  font-size: theme('fontSize.body-md.0');
+  line-height: 1.7;
+}
+
+.md-content > * + * {
+  margin-top: 1em;
+}
+
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  color: theme('colors.on-surface');
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.md-content h1 {
+  font-size: 1.5em;
+}
+
+.md-content h2 {
+  font-size: 1.35em;
+  border-bottom: 1px solid theme('colors.outline-variant');
+  padding-bottom: 0.3em;
+}
+
+.md-content h3 {
+  font-size: 1.15em;
+}
+
+.md-content h4,
+.md-content h5,
+.md-content h6 {
+  font-size: 1em;
+}
+
+.md-content a {
+  color: theme('colors.primary');
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 150ms ease;
+}
+.md-content a:hover {
+  color: theme('colors.primary-fixed');
+}
+
+.md-content strong {
+  color: theme('colors.on-surface');
+  font-weight: 700;
+}
+
+.md-content em {
+  color: theme('colors.on-surface');
+  font-style: italic;
+}
+
+.md-content ul,
+.md-content ol {
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.md-content ul {
+  list-style: none;
+}
+
+.md-content ul > li {
+  position: relative;
+}
+.md-content ul > li::before {
+  content: '';
+  position: absolute;
+  left: -1.1em;
+  top: 0.7em;
+  width: 6px;
+  height: 1px;
+  background: theme('colors.primary');
+}
+
+.md-content ol {
+  list-style: decimal;
+}
+.md-content ol > li::marker {
+  color: theme('colors.primary');
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.md-content blockquote {
+  border-left: 2px solid theme('colors.primary');
+  padding: 0.2em 0 0.2em 1em;
+  color: theme('colors.on-surface');
+  background: rgba(125, 245, 255, 0.04);
+  font-style: italic;
+}
+.md-content blockquote p {
+  margin: 0;
+}
+
+.md-content code {
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-size: 0.86em;
+  background: theme('colors.surface-container-high');
+  border: 1px solid theme('colors.outline-variant');
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+  color: theme('colors.primary');
+}
+
+.md-content pre {
+  background: theme('colors.surface-container-low');
+  border: 1px solid theme('colors.outline-variant');
+  border-left: 2px solid theme('colors.primary');
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+.md-content pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: theme('colors.on-surface');
+  font-size: inherit;
+}
+
+.md-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+}
+.md-content th,
+.md-content td {
+  text-align: left;
+  border: 1px solid theme('colors.outline-variant');
+  padding: 0.5em 0.8em;
+}
+.md-content th {
+  background: theme('colors.surface-container-low');
+  color: theme('colors.on-surface');
+  font-weight: 700;
+}
+.md-content tr:nth-child(even) td {
+  background: rgba(19, 27, 46, 0.5);
+}
+
+.md-content hr {
+  border: none;
+  border-top: 1px solid theme('colors.outline-variant');
+  margin: 2em 0;
+}
+
+.md-content img {
+  max-width: 100%;
+  border: 1px solid theme('colors.outline-variant');
+  display: block;
+}
+
+.md-content p {
+  margin: 0;
+}
