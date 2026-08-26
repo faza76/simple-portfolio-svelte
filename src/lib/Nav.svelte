@@ -9,7 +9,10 @@
   ];
 
   function isActive(path, current) {
-    return path === current;
+    if (path === current) return true;
+    // Keep Blog active while reading any individual post.
+    if (path === '/blog' && current.startsWith('/blog/')) return true;
+    return false;
   }
 
   function go(e, path) {
