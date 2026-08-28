@@ -1,5 +1,6 @@
 <script>
   import { navigate } from '../router.js';
+  import ParticleBackground from '../ParticleBackground.svelte';
 
   const projects = [
     {
@@ -40,6 +41,97 @@
         { label: 'IdentityServer', color: 'tech-infra' },
       ],
     },
+    {
+      ref: 'REF-004',
+      tags: ['MANUFACTURING', 'IOT'],
+      title: 'Predictive Maintenance Platform',
+      description:
+        'IoT-driven predictive maintenance system processing vibration and temperature telemetry from 500+ industrial sensors. ML-powered anomaly detection reduces unplanned downtime by 40%.',
+      stack: [
+        { label: 'C#', color: 'tech-dotnet' },
+        { label: 'Apache Kafka', color: 'tech-infra' },
+        { label: 'TimescaleDB', color: 'tech-sql' },
+        { label: 'Python', color: 'tech-cloud' },
+      ],
+    },
+    {
+      ref: 'REF-005',
+      tags: ['HEALTHCARE', 'API'],
+      title: 'FHIR Interoperability Gateway',
+      description:
+        'RESTful FHIR R4 API gateway enabling bidirectional data exchange between disparate EHR systems. Handles 2M+ resource transactions daily with strict validation and audit logging.',
+      stack: [
+        { label: '.NET 8', color: 'tech-dotnet' },
+        { label: 'FHIR R4', color: 'tech-cloud' },
+        { label: 'Redis', color: 'tech-infra' },
+        { label: 'PostgreSQL', color: 'tech-sql' },
+      ],
+    },
+    {
+      ref: 'REF-006',
+      tags: ['SECURITY', 'INFRASTRUCTURE'],
+      title: 'Zero-Trust Kubernetes Platform',
+      description:
+        'Hardened multi-tenant Kubernetes cluster with mTLS, network policies, and Kyverno admission control. Reduced attack surface by 95% while maintaining developer self-service.',
+      stack: [
+        { label: 'Kubernetes', color: 'tech-cloud' },
+        { label: 'Istio', color: 'tech-infra' },
+        { label: 'Kyverno', color: 'tech-cloud' },
+        { label: 'Terraform', color: 'tech-infra' },
+      ],
+    },
+    {
+      ref: 'REF-007',
+      tags: ['DATA_ENGINEERING', 'ANALYTICS'],
+      title: 'Real-Time Clinical Analytics Engine',
+      description:
+        'Stream processing pipeline aggregating clinical events for real-time dashboards. Processes 50K events/sec with sub-100ms end-to-end latency for ICU monitoring.',
+      stack: [
+        { label: 'Apache Flink', color: 'tech-infra' },
+        { label: 'C#', color: 'tech-dotnet' },
+        { label: 'ClickHouse', color: 'tech-sql' },
+        { label: 'Grafana', color: 'tech-cloud' },
+      ],
+    },
+    {
+      ref: 'REF-008',
+      tags: ['MANUFACTURING', 'WEB_APP'],
+      title: 'Warehouse Automation Dashboard',
+      description:
+        'Real-time warehouse management interface tracking inventory, AGV fleet status, and pick-path optimization. Replaced legacy WMS with a modern Blazor frontend.',
+      stack: [
+        { label: 'Blazor Server', color: 'tech-dotnet' },
+        { label: 'SignalR', color: 'tech-cloud' },
+        { label: 'SQL Server', color: 'tech-sql' },
+        { label: 'RabbitMQ', color: 'tech-infra' },
+      ],
+    },
+    {
+      ref: 'REF-009',
+      tags: ['HEALTHCARE', 'MOBILE'],
+      title: 'Clinician Mobile Companion',
+      description:
+        'Cross-platform mobile app for clinicians providing on-the-go access to patient records, medication orders, and secure messaging. Offline-first architecture with sync-on-reconnect.',
+      stack: [
+        { label: '.NET MAUI', color: 'tech-dotnet' },
+        { label: 'SQLite', color: 'tech-sql' },
+        { label: 'gRPC', color: 'tech-cloud' },
+        { label: 'Azure AD B2C', color: 'tech-infra' },
+      ],
+    },
+    {
+      ref: 'REF-010',
+      tags: ['DEVOPS', 'AUTOMATION'],
+      title: 'CI/CD Pipeline Orchestrator',
+      description:
+        'Fully automated deployment pipeline serving 30+ microservices. Blue-green deployments, automated rollback, and canary releases with traffic splitting.',
+      stack: [
+        { label: 'GitHub Actions', color: 'tech-infra' },
+        { label: 'ArgoCD', color: 'tech-cloud' },
+        { label: 'Helm', color: 'tech-infra' },
+        { label: 'Prometheus', color: 'tech-cloud' },
+      ],
+    },
   ];
 
   function goContact(e) {
@@ -52,7 +144,9 @@
   <title>SYS_ARCHITECT_v4.0 - Portfolio</title>
 </svelte:head>
 
-<div class="pb-stack-lg px-margin-mobile md:px-margin-desktop container mx-auto">
+<ParticleBackground />
+
+<div class="pb-stack-lg px-margin-mobile md:px-margin-desktop container mx-auto relative z-10">
 <!-- Hero Section -->
 <section
   class="py-stack-lg mb-stack-lg border-b border-outline-variant relative flex flex-col items-center text-center grid-bg"
