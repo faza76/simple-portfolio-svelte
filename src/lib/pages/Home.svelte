@@ -171,14 +171,14 @@
         class="inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 transition-colors hover:bg-primary-fixed"
         href="#portfolio"
       >
-        VIEW_ARCHITECTURE_LOG
+        View Tech Stack
       </a>
       <a
         class="inline-flex items-center justify-center border border-outline text-on-surface font-label-caps text-label-caps px-6 py-3 transition-colors hover:border-secondary-container hover:text-secondary"
         href="#/contact"
         on:click={goContact}
       >
-        INITIALIZE_CONTACT
+        Contact Developer
       </a>
     </div>
   </div>
