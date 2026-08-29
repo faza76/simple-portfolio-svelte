@@ -29,7 +29,7 @@
     on:click={(e) => go(e, '/')}
     class="font-label-caps text-label-caps tracking-tighter text-primary dark:text-primary"
   >
-    SYS_ARCHITECT_v4.0
+  Software Engineering 3+ Experience 
   </a>
 
   <nav class="hidden md:flex items-center gap-gutter">
