@@ -2,6 +2,16 @@
   import { navigate } from '../router.js';
   import ParticleBackground from '../ParticleBackground.svelte';
 
+  let mobileMenuOpen = false;
+  function toggleMobileMenu() {
+    mobileMenuOpen = !mobileMenuOpen;
+  }
+  function goRoute(e, path) {
+    e.preventDefault();
+    mobileMenuOpen = false;
+    navigate(path);
+  }
+
   const projects = [
     {
       ref: 'REF-001',
@@ -149,7 +159,7 @@
 <div class="pb-stack-lg px-margin-mobile md:px-margin-desktop container mx-auto relative z-10">
 <!-- Hero Section -->
 <section
-  class="py-stack-lg mb-stack-lg border-b border-outline-variant relative flex flex-col items-center text-center grid-bg"
+  class="py-stack-md mb-stack-md md:py-stack-lg md:mb-stack-lg border-b border-outline-variant relative flex flex-col items-center text-center grid-bg"
 >
   <div class="max-w-4xl flex flex-col items-center">
     <div class="font-label-caps text-label-caps text-primary mb-stack-sm flex items-center justify-center gap-2">
@@ -157,24 +167,24 @@
       SYSTEM_STATUS: ONLINE
     </div>
     <h1
-      class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-on-background mb-stack-md"
+      class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-on-background mb-stack-sm md:mb-stack-md"
     >
       Architecting Systems for Life &amp; Industry
     </h1>
-    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-stack-lg">
+    <p class="font-body-sm md:font-body-md text-body-sm md:text-body-md text-on-surface-variant max-w-2xl mb-stack-md md:mb-stack-lg px-2">
       Fullstack .NET Developer specializing in high-reliability architectures. 4+ years engineering scalable data
       pipelines and integration solutions for Healthcare and Manufacturing sectors. Precision-driven, structurally
       sound code.
     </p>
-    <div class="flex justify-center gap-stack-md">
+    <div class="flex flex-wrap justify-center gap-stack-sm md:gap-stack-md">
       <a
-        class="inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 transition-colors hover:bg-primary-fixed"
+        class="inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps px-5 py-2.5 md:px-6 md:py-3 transition-colors hover:bg-primary-fixed"
         href="#portfolio"
       >
         View Tech Stack
       </a>
       <a
-        class="inline-flex items-center justify-center border border-outline text-on-surface font-label-caps text-label-caps px-6 py-3 transition-colors hover:border-secondary-container hover:text-secondary"
+        class="inline-flex items-center justify-center border border-outline text-on-surface font-label-caps text-label-caps px-5 py-2.5 md:px-6 md:py-3 transition-colors hover:border-secondary-container hover:text-secondary"
         href="#/contact"
         on:click={goContact}
       >
